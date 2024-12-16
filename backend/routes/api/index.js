@@ -1,9 +1,8 @@
 // backend/routes/api/index.js
 const express = require('express');
 const router = express.Router();
+const { restoreUser } = require('../../utils/auth.js');
 
-router.post('/test', (req, res) => {
-  res.json({ requestBody: req.body });
-});
+router.use(restoreUser);
 
 module.exports = router;
